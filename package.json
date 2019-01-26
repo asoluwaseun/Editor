@@ -1,0 +1,18 @@
+{
+  "name": "node-project",
+  "version": "0.0.0",
+  "description": "",
+  "main": "indexs.js",
+  
+  "private": true,
+  "dependencies": {
+    "core-js": "^2.5.4",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "formidable": "^1.2.1",
+    "mongoose": "^5.4.2",
+    "request": "^2.88.0",
+    "rxjs": "~6.3.3",
+    "zone.js": "~0.8.26"
+  }
+}

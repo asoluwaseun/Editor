@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Node</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/css/all.css" rel="stylesheet" type="text/css">
+   
+
+</head>
+<body class="bg-dark"  >
+
+    <div class="row m-4">
+        <div class="col-12 col-md-5 p-3 bg-white rounded">
+                <form action="/saveFile" method="post" name="reg" ng-app="myApp" ng-controller="myCtrl">
+                   
+                 <div class="input-group mb-3 input-group">
+                    <div class="input-group-prepend ">
+                        <span class="input-group-text">Choose File Name</span>
+
+                    </div>
+                    <input type="text" class="form-control" name="fileName" value="" required>
+                </div>
+                <div class="input-group mb-3 input-group">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text">Enter HTML Code</span>
+    
+                        </div>
+                        <textarea name="fileContent" onkeyup="color(this.value)" class="form-control bg-dark text-warning"  rows="20" cols="30"></textarea>
+                    </div>
+                
+            <input type="submit" class="btn btn-block bg-primary mt-3 text-white" ng-disabled="reg.firstName.$invalid" value="Save File">
+        </form>   
+        </div>
+
+        <div class="col-12 col-md-3  bg-primary rounded ml-2 text-white">
+                <h3 class="text-center">Files Saved</h3>
+                    <% if(fileContent != "") {%>
+                        <ol>
+                       <% for(i = 0; i < fileContent.length; i++){%>
+                           <a href="/getFile/<%= fileContent[i] %>" class="text-white"><li><%= fileContent[i] %></li></a>
+
+                        <%}%>
+                        <ol>
+                    <%}%>
+            </div>
+
+        <div class="col-12 col-md-3 ml-2 bg-white rounded">
+            <div class="col-12">
+                    <h4 class="text-center">View Box</h4>
+                  <% if(fileGot != null){%>
+                    <div class="border-white">
+                        <%- fileGot %>
+                    </div>
+                  <%}%>  
+            </div>
+            
+        </div>
+    </div>
+<script src="/js/editor.js"></script>
+</body>
+</html>
