@@ -37,7 +37,7 @@
 
         <div class="col-12 col-md-3  bg-primary rounded ml-2 text-white">
                 <h3 class="text-center">Files Saved</h3>
-                    <% if(fileContent != "") {%>
+                    <% if(fileContent != null) {%>
                         <ol>
                        <% for(i = 0; i < fileContent.length; i++){%>
                            <a href="/getFile/<%= fileContent[i] %>" class="text-white"><li><%= fileContent[i] %></li></a>
