@@ -19,7 +19,8 @@ const port = 80
 const api = '76945312929e2faebd4f129b87abfded'
 
 app.get('/',(req,res) =>{
-    res.render('editor',{fileContent: items, fileGot: null}) 
+    
+    res.render('editor',{fileContent: null, fileGot: null}) 
     // fs.readdir('/public/savedfiles/', function(err, items) {
     //     res.render('editor',{fileContent: items, fileGot: null}) 
     // }); 
