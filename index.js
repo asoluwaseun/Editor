@@ -12,17 +12,17 @@ app.use(bodyParser.urlencoded({ extended: true}))
 app.use(express.static(__dirname + '/public'))
 app.set('view engine','ejs')
 mongoose.Promise = global.Promise
-mongoose.connect("mongodb://asoluwaseun:qwertyu1@ds155714.mlab.com:55714/application",{ useNewUrlParser: true })
 
 // mongoose.connect("mongodb://localhost:27017/newDataBase",{ useNewUrlParser: true })
 
-const port = 8085
+const port = 80
 const api = '76945312929e2faebd4f129b87abfded'
 
 app.get('/',(req,res) =>{
-    fs.readdir('/public/savedfiles/', function(err, items) {
-        res.render('editor',{fileContent: items, fileGot: null}) 
-    }); 
+    res.render('editor',{fileContent: items, fileGot: null}) 
+    // fs.readdir('/public/savedfiles/', function(err, items) {
+    //     res.render('editor',{fileContent: items, fileGot: null}) 
+    // }); 
 })
 
 app.post('/saveFile',(req,res)=>{
@@ -32,7 +32,6 @@ app.post('/saveFile',(req,res)=>{
         if (err) throw err;
         fs.readFile(`/public/savedfiles/${fileName}.html`,'utf8',function(err, data) {
             console.log(data)
-                let fileGot = data;
             fs.readdir('/public/savedfiles/', function(err, items) {
                 res.render('editor',{fileContent: items, fileGot: fileGot}) 
             }); 
