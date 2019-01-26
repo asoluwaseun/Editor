@@ -3,12 +3,15 @@
   "version": "0.0.0",
   "description": "",
   "main": "indexs.js",
-  
+  "scripts": {
+    "start": "node index.js"
+  },
   "private": true,
   "dependencies": {
     "core-js": "^2.5.4",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "mongoose": "^5.4.2",
     "formidable": "^1.2.1",
     "request": "^2.88.0",
     "rxjs": "~6.3.3",
